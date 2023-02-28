@@ -4,18 +4,25 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors());
-app.get('/', (req, res) => {
-	console.log('hello');
-	res.send('hello');
+
+let users = [];
+
+app.post('/', (req, res) => {
+	console.log(req.body);
+	res.send('User is created');
 });
 
-app.get('/about', (req, res) => {
-	res.send('about');
-});
+// app.get('/about', (req, res) => {
+// 	res.send('about');
+// });
 
-app.get('/contact', (req, res) => {
-	res.send('I am Contact Page');
-});
+// app.put('/about', (req, res) => {
+// 	res.send('about');
+// });
+
+// app.get('/contact', (req, res) => {
+// 	res.send('I am Contact Page');
+// });
 
 app.listen(port, () => {
 	console.log(`Example app Tayyaba on port ${port}`);
