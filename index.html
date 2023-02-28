@@ -20,6 +20,9 @@
 
 			<input type="submit" value="SignUp" />
 		</form>
+		<div id="result"></div>
+
+		<button type="button" id="dataget">Get data</button>
 
 		<script>
 			function signup() {
@@ -38,6 +41,9 @@
 				.catch(function (error) {
 					console.log(error.message);
 				});
+			axios.get('https://colorful-knickers-seal.cyclic.app/users', {}).then(function (response) {
+				document.getElementById('result').innerHTML = response.data;
+			});
 		</script>
 	</body>
 </html>
