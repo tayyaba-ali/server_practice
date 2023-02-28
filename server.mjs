@@ -7,9 +7,7 @@ let store = [];
 
 app.use(cors());
 app.get('/', (req, res) => {
-	res.send({
-		weather: 'karachi',
-	});
+	res.send(req.body);
 });
 
 app.get('/about', (req, res) => {
