@@ -6,11 +6,11 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.get('/', (req, res) => {
 	console.log('hello');
-	req.send('hello');
+	res.send('hello');
 });
 
 app.get('/about', (req, res) => {
-	req.send('about');
+	res.send('about');
 });
 
 app.get('/contact', (req, res) => {
