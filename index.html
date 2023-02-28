@@ -43,7 +43,7 @@
 				.catch(function (error) {
 					console.log(error.message);
 				});
-			axios.get('https://colorful-knickers-seal.cyclic.app/users', {}).then(function (response) {
+			axios.get('https://colorful-knickers-seal.cyclic.app/users').then(function (response) {
 				document.getElementById('result').innerHTML = response.data;
 			});
 		</script>
