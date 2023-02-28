@@ -8,6 +8,7 @@ let store = [];
 app.use(cors());
 app.get('/', (req, res) => {
 	res.send(req.body);
+	console.log(req.body);
 });
 
 app.get('/about', (req, res) => {
