@@ -11,7 +11,7 @@ let store = [];
 app.post('/users', (req, res) => {
 	console.log(req.body);
 	store.push(req.body);
-	res.send('User is created');
+	res.send('User is created Buhahaha ❤');
 });
 
 app.get('/users', (req, res) => {

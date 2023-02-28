@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form onsubmit="signUp(); return false">
+			<label for="username">
+				Enter name
+				<input type="text" id="username" />
+			</label>
+
+			<label for="password">
+				Enter name
+				<input type="text" id="password" />
+			</label>
+
+			<input type="submit" value="SignUp" />
+		</form>
+
+		<script>
+			function signup() {
+				let username = document.getElementById('username').value;
+				let password = document.getElementById('password').value;
+			}
+
+			axios
+				.post('https://colorful-knickers-seal.cyclic.app/users', {
+					firstName: username,
+					password: password,
+				})
+				.then(function (response) {
+					console.log(response.data);
+				})
+				.catch(function (error) {
+					console.log(error.message);
+				});
+		</script>
+	</body>
+</html>
