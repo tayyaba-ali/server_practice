@@ -8,44 +8,65 @@
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	</head>
 	<body>
-		<form onsubmit="signUp(); return false">
-			<label for="username">
-				Enter name
-				<input type="text" id="username" />
-			</label>
+		<h1>Signup Form</h1>
 
-			<label for="password">
-				Password
-				<input type="text" id="password" />
-			</label>
+		<form onsubmit="signup(); return false ">
+			<label for="fullname">Full Name</label>
+			<input type="text" id="fullname" />
 
-			<input type="submit" value="signUp" />
+			<br />
+			<label for="username">Username</label>
+			<input type="text" id="username" />
+
+			<br />
+			<label for="password">Password</label>
+			<input type="password" id="password" />
+
+			<br />
+			<input type="submit" value="Signup" />
 		</form>
-		<div id="message"></div>
 
-		<button type="button" id="dataget">Get data</button>
+		<p id="message"></p>
+
+		<br />
+		<br />
+		<br />
+		<br />
+
+		<button onclick="getAllUsers()">Get All Users</button>
+
+		<p id="allUserList"></p>
 
 		<script>
-			function signUp() {
-				let username = document.getElementById('username').value;
-				let password = document.getElementById('password').value;
-				// console.log(username, password);
+			function signup() {
+				var username = document.getElementById('username').value;
+				var password = document.getElementById('password').value;
+
+				axios
+					.post('https://colorful-knickers-seal.cyclic.app/users', {
+						username: username,
+						password: password,
+					})
+					.then(function (response) {
+						console.log(response.data);
+						document.querySelector('#message').innerHTML = response.data;
+					})
+					.catch(function (error) {
+						console.log(error.message);
+					});
 			}
 
-			axios
-				.post('https://colorful-knickers-seal.cyclic.app/users', {
-					firstName: username,
-					password: password,
-				})
-				.then(function (response) {
-					document.querySelector('#message').innerHTML = response.data;
-				})
-				.catch(function (error) {
-					console.log(error.message);
+			function getAllUsers() {
+				axios.get('https://colorful-knickers-seal.cyclic.app/users').then(function (response) {
+					console.log(response.data);
+
+					response.data.map((eachUser) => {
+						document.querySelector(
+							'#allUserList',
+						).innerHTML += `<b>${eachUser.fullname}</b> ${eachUser.username} ${eachUser.password} <br>`;
+					});
 				});
-			axios.get('https://colorful-knickers-seal.cyclic.app/users').then(function (response) {
-				document.getElementById('result').innerHTML = `${response.data}`;
-			});
+			}
 		</script>
 	</body>
 </html>
