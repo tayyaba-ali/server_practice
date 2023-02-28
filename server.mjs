@@ -7,14 +7,14 @@ app.use(cors());
 
 let users = [];
 
-app.post('/', (req, res) => {
+app.post('/users', (req, res) => {
 	console.log(req.body);
 	res.send('User is created');
 });
 
-// app.get('/about', (req, res) => {
-// 	res.send('about');
-// });
+app.get('/about', (req, res) => {
+	res.send(users);
+});
 
 // app.put('/about', (req, res) => {
 // 	res.send('about');
