@@ -10,8 +10,8 @@ let store = {};
 
 app.post('/users', (req, res) => {
 	console.log(req.body);
-	store.push(req.body);
-	res.send('User is created Buhahaha ❤');
+	Object.assign(store, { key: req.body });
+	res.send('Your post is published');
 });
 
 app.get('/users', (req, res) => {
