@@ -15,7 +15,7 @@ app.post('/users', (req, res) => {
 });
 
 app.get('/users', (req, res) => {
-	res.send(store);
+	res.send(store.key);
 });
 
 // app.put('/about', (req, res) => {
