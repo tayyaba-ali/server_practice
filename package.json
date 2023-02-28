@@ -19,8 +19,11 @@
   },
   "homepage": "https://github.com/tayyaba-ali/server_practice#readme",
   "dependencies": {
+    "@mui/material": "^5.11.11",
+    "@mui/styled-engine-sc": "^5.11.11",
     "axios": "^1.3.4",
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "styled-components": "^5.3.6"
   }
 }
