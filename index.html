@@ -58,7 +58,6 @@
 			function post() {
 				var username = document.getElementById('username').value;
 				var post = document.getElementById('post').value;
-				console.log(username, post);
 
 				axios
 					.post('https://colorful-knickers-seal.cyclic.app/users', {
@@ -73,12 +72,23 @@
 						console.log(error.message);
 					});
 			}
-
 			function getAllUsers() {
 				axios.get('https://colorful-knickers-seal.cyclic.app/users').then(function (response) {
 					console.log(response.data);
+					let data = response.data;
+					document.querySelector('#allUserList').innerHTML += ` <div class="container card mt-5" style="width: 18rem">
+			<h1 class="text-center">See yours and others posts</h1>
+			<div class="card-body">
+				<!-- <h5 class="card-title">Card title</h5> -->
+                    ${data.username}
+				<!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+				<p class="card-text">
+                                            ${data.post}
 
-					document.querySelector('#allUserList').innerHTML += `<b>${eachUser.username}</b> ${eachUser.post} <br>`;
+				</p>
+			</div>
+		</div>
+`;
 				});
 			}
 		</script>
