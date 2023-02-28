@@ -78,9 +78,7 @@
 				axios.get('https://colorful-knickers-seal.cyclic.app/users').then(function (response) {
 					console.log(response.data);
 
-					response.data.map((eachUser) => {
-						document.querySelector('#allUserList').innerHTML += `<b>${eachUser.username}</b> ${eachUser.post} <br>`;
-					});
+					document.querySelector('#allUserList').innerHTML += `<b>${eachUser.username}</b> ${eachUser.post} <br>`;
 				});
 			}
 		</script>
