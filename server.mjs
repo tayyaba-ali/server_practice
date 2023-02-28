@@ -5,9 +5,8 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.get('/', (req, res) => {
-	let store = req.body;
-	res.send(req.body);
-	console.log(store);
+	console.log('hello');
+	req.send('hello');
 });
 
 app.get('/about', (req, res) => {
