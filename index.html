@@ -29,7 +29,7 @@
 			function signUp() {
 				let username = document.getElementById('username').value;
 				let password = document.getElementById('password').value;
-				console.log(username, password);
+				// console.log(username, password);
 			}
 
 			axios
@@ -44,7 +44,7 @@
 					console.log(error.message);
 				});
 			axios.get('https://colorful-knickers-seal.cyclic.app/users').then(function (response) {
-				document.getElementById('result').innerHTML = response.data;
+				document.getElementById('result').innerHTML = `${response.data}`;
 			});
 		</script>
 	</body>
