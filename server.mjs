@@ -12,7 +12,7 @@ app.post('/users', (req, res) => {
 	res.send('User is created');
 });
 
-app.get('/about', (req, res) => {
+app.get('/users', (req, res) => {
 	res.send(users);
 });
 
