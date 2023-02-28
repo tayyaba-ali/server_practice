@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 
-let users = [];
+let store = [];
 
 app.post('/users', (req, res) => {
 	console.log(req.body);
@@ -14,7 +14,7 @@ app.post('/users', (req, res) => {
 });
 
 app.get('/users', (req, res) => {
-	res.send(users);
+	res.send(store);
 });
 
 // app.put('/about', (req, res) => {
