@@ -10,8 +10,8 @@ let store = [];
 
 app.post('/users', (req, res) => {
 	console.log(req.body);
+	store.push(req.body);
 	res.send('User is created');
-	console.log(store);
 });
 
 app.get('/users', (req, res) => {
