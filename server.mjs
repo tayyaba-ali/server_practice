@@ -3,9 +3,12 @@ import express from 'express';
 const app = express();
 const port = process.env.PORT || 3000;
 
+let store = [];
+
 app.use(cors());
 app.get('/', (req, res) => {
-	res.send('I am Home Page');
+	res.send(store);
+	store.push[req.body];
 });
 
 app.get('/about', (req, res) => {
