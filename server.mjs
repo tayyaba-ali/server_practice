@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 
-let store = [];
+let store = {};
 
 app.post('/users', (req, res) => {
 	console.log(req.body);
@@ -15,7 +15,11 @@ app.post('/users', (req, res) => {
 });
 
 app.get('/users', (req, res) => {
-	res.send(store);
+	res.send(
+		store.map((user) => {
+			return `My name is ${user.uername} and my post text is ${user.post}`;
+		}),
+	);
 });
 
 // app.put('/about', (req, res) => {

@@ -38,6 +38,7 @@
 						Write your post here
 						<input type="text" id="post" />
 					</label>
+					<button type="submit" onclick="post()">POST</button>
 				</p>
 			</div>
 		</div>
@@ -54,9 +55,10 @@
 		<p id="allUserList"></p>
 
 		<script>
-			function signup() {
+			function post() {
 				var username = document.getElementById('username').value;
 				var post = document.getElementById('post').value;
+				console.log(username, post);
 
 				axios
 					.post('https://colorful-knickers-seal.cyclic.app/users', {
