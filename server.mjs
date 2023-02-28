@@ -10,8 +10,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-	store.push(req.body);
-	res.send(store);
+	req.send('about');
 });
 
 app.get('/contact', (req, res) => {
