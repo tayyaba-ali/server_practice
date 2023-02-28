@@ -9,7 +9,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-	res.send(req.body);
+	res.send({
+		name: 'Tayyaba',
+		password: '123',
+	});
 });
 
 app.get('/contact', (req, res) => {
