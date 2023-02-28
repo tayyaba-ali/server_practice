@@ -21,7 +21,7 @@
 
 			<input type="submit" value="signUp" />
 		</form>
-		<div id="result"></div>
+		<div id="message"></div>
 
 		<button type="button" id="dataget">Get data</button>
 
@@ -38,7 +38,7 @@
 					password: password,
 				})
 				.then(function (response) {
-					console.log(response.data);
+					document.querySelector('#message').innerHTML = response.data;
 				})
 				.catch(function (error) {
 					console.log(error.message);
