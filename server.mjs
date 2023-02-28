@@ -15,11 +15,7 @@ app.post('/users', (req, res) => {
 });
 
 app.get('/users', (req, res) => {
-	res.send(
-		store.map((user) => {
-			return `My name is ${user.uername} and my post text is ${user.post}`;
-		}),
-	);
+	res.send(store);
 });
 
 // app.put('/about', (req, res) => {
